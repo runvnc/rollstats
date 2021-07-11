@@ -21,39 +21,39 @@ let rndcnt = 0
     
 function printNum(n, outp) {   
     let i = 0
-	for 1 {
-		let digit = n % 10
-		outp = setbyte(outp, 2-i, digit+48)
-		n = n / 10		
-		if n == 0 {
-		    print(outp)
-			return 1
-		}		
-		i = i + 1
-	}	
-	return 1
+    for 1 {
+        let digit = n % 10
+        outp = setbyte(outp, 2-i, digit+48)
+        n = n / 10		
+        if n == 0 {
+            print(outp)
+            return 1
+        }		
+        i = i + 1
+    }	
+    return 1
 }
 
 function logic() { 
     apps[0].put("dbg"," ")
     let drop = 99
-	let hash = sha256(txn.TxId)
-	let bigRand = 0
-	getRand(roll1, 1,6)
-	getRand(roll2, 1,6)
-	getRand(roll3, 1,6)
-	getRand(roll4, 1,6)
+    let hash = sha256(txn.TxId)
+    let bigRand = 0
+    getRand(roll1, 1,6)
+    getRand(roll2, 1,6)
+    getRand(roll3, 1,6)
+    getRand(roll4, 1,6)
 
-	printOneDigit(roll1, "    ")
-	printOneDigit(roll2, "    ")
-	printOneDigit(roll3, "    ")
-	printOneDigit(roll4, "  = ")
-	let stat = 0
-	if roll1 < drop { drop = roll1 }
-	if roll2 < drop { drop = roll2 }
-	if roll3 < drop { drop = roll3 }
-	if roll4 < drop { drop = roll4 }
-	stat = roll1 + roll2 + roll3 + roll4 - drop
+    printOneDigit(roll1, "    ")
+    printOneDigit(roll2, "    ")
+    printOneDigit(roll3, "    ")
+    printOneDigit(roll4, "  = ")
+    let stat = 0
+    if roll1 < drop { drop = roll1 }
+    if roll2 < drop { drop = roll2 }
+    if roll3 < drop { drop = roll3 }
+    if roll4 < drop { drop = roll4 }
+    stat = roll1 + roll2 + roll3 + roll4 - drop
     let bonus = 0
     fgBlack
     bgWhite
@@ -63,19 +63,19 @@ function logic() {
     bgBlack    
     print(" ")
     if stat > 11 {
-    	bonus = (stat - 10) / 2
-    	fgYellow
-    	print("[+")
-    	printOneDigit(bonus, " ", 1)
-    	print("] ")    	
+        bonus = (stat - 10) / 2
+        fgYellow
+        print("[+")
+        printOneDigit(bonus, " ", 1)
+        print("] ")    	
     }
     if stat < 10 {
-    	bonus = ((10 - stat + 1) / 2)
-    	fgRed
-    	print("[-")
-    	printOneDigit(bonus, " ", 1)
-    	print("] ")
+        bonus = ((10 - stat + 1) / 2)
+        fgRed
+        print("[-")
+        printOneDigit(bonus, " ", 1)
+        print("] ")
     }
     print(" ")
-	return 1
+    return 1
 }
