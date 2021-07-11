@@ -22,6 +22,8 @@ Also, before running, you will need to **first set the environment variable `$AP
 It is written in [Tealang](https://github.com/pzbitskiy/tealang), also using the GPP macro preprocessor.  The macros are helpful to conserve instruction executions, since stateful programs
 on the Algorand blockchain only get a maximum of 700 instructions executed.
 
+The "random" function is the simplest thing I could come up with that sort of worked. I'm not sure it even qualifies as pseudo-random though.  There are limited cycles left, but it may be possible to make it slightly better.
+
 ## Why?
 
 Not to offend anyone, but the most accurate technical term is "pure fuckery".
