@@ -6,10 +6,10 @@ This will perform a standard Dungeons & Dragons ability score roll simulating 4d
 It runs as a stateful program on the Algorand blockchain. Has a few ANSI colors to enhance the output.
 You can try it out with the included scripts that call `goal` if you have an Algorand node or sandbox setup.
 
-I use **`fish` shell, so that is required** with these exact scripts (not hard to modify them for bash). You will need the `gpp` program installed.
+I use **`fish` shell, so that is required** with these exact scripts (not hard to modify them for bash). You will need the `gpp` program installed if you are running the build script.
 Also, before running, you will need to **first set the environment variable `$APP_CREATOR`**.
 
-You will also need to **install a JSON processing program called `jq` first**.
+You will also need to **install a JSON processing program called `jq` first** before calling.
 
 ```shell
 ./init.sh
