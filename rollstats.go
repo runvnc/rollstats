@@ -1,13 +1,6 @@
 let _= 0
 let rndcnt = 0
 
-#define RED = 1
-#define GREEN = 2
-#define WHITE = 15
-#define BLACK = 0
-#define BLUE = 4
-#define YELLOW = 11
-
 #define print(x) apps[0].put("dbg", concat(apps[0].get("dbg"), x ))
 
 #define printOneDigit(n, outp) print(setbyte(outp, 0, n+48))
