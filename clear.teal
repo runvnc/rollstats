@@ -1,0 +1,6 @@
+#pragma version 4
+intcblock 0 1
+fun_main:
+intc 1
+return
+end_main:

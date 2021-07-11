@@ -1,0 +1,370 @@
+#pragma version 4
+intcblock 0 1 99 7 6 48 10 2 11
+bytecblock 0x646267 0x20 0x20202020 0x20203d20 0x1b5b33383b353b306d 0x1b5b34383b353b31356d 0x1b5b33383b353b31356d 0x1b5b34383b353b306d 0x1b5b33383b353b31316d 0x5b2b 0x5d20 0x1b5b33383b353b316d 0x5b2d
+intc 0
+store 0
+intc 0
+store 1
+fun_main:
+bytec 0
+bytec 1
+app_global_put
+intc 2
+store 2
+txn TxID
+sha256
+store 3
+intc 0
+store 4
+load 3
+load 1
+intc 3
+load 1
++
+substring3
+btoi
+store 4
+load 1
+intc 1
++
+store 1
+intc 1
+load 4
+intc 4
+intc 1
+-
+intc 1
++
+%
++
+store 5
+load 3
+load 1
+intc 3
+load 1
++
+substring3
+btoi
+store 4
+load 1
+intc 1
++
+store 1
+intc 1
+load 4
+intc 4
+intc 1
+-
+intc 1
++
+%
++
+store 6
+load 3
+load 1
+intc 3
+load 1
++
+substring3
+btoi
+store 4
+load 1
+intc 1
++
+store 1
+intc 1
+load 4
+intc 4
+intc 1
+-
+intc 1
++
+%
++
+store 7
+load 3
+load 1
+intc 3
+load 1
++
+substring3
+btoi
+store 4
+load 1
+intc 1
++
+store 1
+intc 1
+load 4
+intc 4
+intc 1
+-
+intc 1
++
+%
++
+store 8
+bytec 0
+bytec 0
+app_global_get
+bytec 2
+intc 0
+load 5
+intc 5
++
+setbyte
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 2
+intc 0
+load 6
+intc 5
++
+setbyte
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 2
+intc 0
+load 7
+intc 5
++
+setbyte
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 3
+intc 0
+load 8
+intc 5
++
+setbyte
+concat
+app_global_put
+intc 0
+store 9
+load 5
+load 2
+<
+bz if_stmt_end_824636427840
+load 5
+store 2
+if_stmt_end_824636427840:
+load 6
+load 2
+<
+bz if_stmt_end_824636427848
+load 6
+store 2
+if_stmt_end_824636427848:
+load 7
+load 2
+<
+bz if_stmt_end_824636427856
+load 7
+store 2
+if_stmt_end_824636427856:
+load 8
+load 2
+<
+bz if_stmt_end_824636427864
+load 8
+store 2
+if_stmt_end_824636427864:
+load 5
+load 6
++
+load 7
++
+load 8
++
+load 2
+-
+store 9
+intc 0
+store 10
+bytec 0
+bytec 0
+app_global_get
+bytec 4
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 5
+concat
+app_global_put
+load 9
+store 11
+bytec 2
+store 12
+callsub fun_printNum
+store 0
+bytec 0
+bytec 0
+app_global_get
+bytec 1
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 6
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 7
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 1
+concat
+app_global_put
+load 9
+intc 8
+>
+bz if_stmt_end_824636427872
+load 9
+intc 6
+-
+intc 7
+/
+store 10
+bytec 0
+bytec 0
+app_global_get
+bytec 8
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 9
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 1
+intc 0
+load 10
+intc 5
++
+setbyte
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 10
+concat
+app_global_put
+if_stmt_end_824636427872:
+load 9
+intc 6
+<
+bz if_stmt_end_824636427880
+intc 6
+load 9
+-
+intc 1
++
+intc 7
+/
+store 10
+bytec 0
+bytec 0
+app_global_get
+bytec 11
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 12
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 1
+intc 0
+load 10
+intc 5
++
+setbyte
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 10
+concat
+app_global_put
+if_stmt_end_824636427880:
+bytec 0
+bytec 0
+app_global_get
+bytec 1
+concat
+app_global_put
+intc 1
+return
+end_main:
+fun_printNum:
+intc 0
+store 13
+loop_start_824636427888:
+intc 1
+bz loop_end_824636427888
+load 11
+intc 6
+%
+store 14
+load 12
+intc 7
+load 13
+-
+load 14
+intc 5
++
+setbyte
+store 12
+load 11
+intc 6
+/
+store 11
+load 11
+intc 0
+==
+bz if_stmt_end_824636427896
+bytec 0
+bytec 0
+app_global_get
+load 12
+concat
+app_global_put
+intc 1
+retsub
+if_stmt_end_824636427896:
+load 13
+intc 1
++
+store 13
+b loop_start_824636427888
+loop_end_824636427888:
+intc 1
+retsub
+end_printNum:

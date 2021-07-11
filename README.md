@@ -4,16 +4,22 @@
 
 This will perform a standard Dungeons & Dragons ability score roll simulating 4d6 with the lowest dropped and calculating your bonus.
 It runs as a stateful program on the Algorand blockchain. Has a few ANSI colors to enhance the output.
-You can try it out with the included bash script (without even having to clone the repo):
+You can try it out with the included scripts that call `goal` if you have an Algorand node or sandbox setup.
+
+I use `fish` shell, so that is required with these exact scripts (not hard to modify them for bash). You will need the `gpp` program installed.
+Also, before running, you will need to *first set the environment variable `$APP_CREATOR`*.
 
 ```shell
-wget https://raw.github.com/
-bash roll.sh
+./init.sh
+```
+
+```shell
+./call.sh
 ```
 
 ## How
 
-It is written in tealang (repo), also using the GPP macro preprocessor.  The macros are helpful to conserve instruction executions, since stateful programs
+It is written in [Tealang](https://github.com/pzbitskiy/tealang), also using the GPP macro preprocessor.  The macros are helpful to conserve instruction executions, since stateful programs
 on the Algorand blockchain only get a maximum of 700 instructions executed.
 
 ## Why?
