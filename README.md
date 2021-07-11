@@ -14,7 +14,7 @@ Also, before running, you will need to **first set the environment variable `$AP
 ```
 
 ```shell
-./call.sh
+./multi.sh
 ```
 
 ## How
