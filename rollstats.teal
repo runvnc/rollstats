@@ -1,6 +1,6 @@
 #pragma version 4
 intcblock 0 1 99 7 6 48 10 2 11
-bytecblock 0x646267 0x20 0x20202020 0x20203d20 0x1b5b33383b353b306d 0x1b5b34383b353b31356d 0x1b5b33383b353b31356d 0x1b5b34383b353b306d 0x1b5b33383b353b31316d 0x5b2b 0x5d20 0x1b5b33383b353b316d 0x5b2d
+bytecblock 0x646267 0x20 0x1b5b34383b353b306d 0x1b5b33383b353b31356d 0x20202020 0x20203d20 0x1b5b33383b353b306d 0x1b5b34383b353b31356d 0x1b5b33383b353b31316d 0x5b2b 0x5d20 0x1b5b33383b353b316d 0x5b2d 0x0d
 intc 0
 store 0
 intc 0
@@ -12,6 +12,9 @@ app_global_put
 intc 2
 store 2
 txn TxID
+global LatestTimestamp
+itob
+concat
 sha256
 store 3
 intc 0
@@ -108,6 +111,18 @@ bytec 0
 bytec 0
 app_global_get
 bytec 2
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 3
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 4
 intc 0
 load 5
 intc 5
@@ -118,7 +133,7 @@ app_global_put
 bytec 0
 bytec 0
 app_global_get
-bytec 2
+bytec 4
 intc 0
 load 6
 intc 5
@@ -129,7 +144,7 @@ app_global_put
 bytec 0
 bytec 0
 app_global_get
-bytec 2
+bytec 4
 intc 0
 load 7
 intc 5
@@ -140,7 +155,7 @@ app_global_put
 bytec 0
 bytec 0
 app_global_get
-bytec 3
+bytec 5
 intc 0
 load 8
 intc 5
@@ -153,31 +168,31 @@ store 9
 load 5
 load 2
 <
-bz if_stmt_end_824636427840
+bz if_stmt_end_824633786896
 load 5
 store 2
-if_stmt_end_824636427840:
+if_stmt_end_824633786896:
 load 6
 load 2
 <
-bz if_stmt_end_824636427848
+bz if_stmt_end_824633786904
 load 6
 store 2
-if_stmt_end_824636427848:
+if_stmt_end_824633786904:
 load 7
 load 2
 <
-bz if_stmt_end_824636427856
+bz if_stmt_end_824633786912
 load 7
 store 2
-if_stmt_end_824636427856:
+if_stmt_end_824633786912:
 load 8
 load 2
 <
-bz if_stmt_end_824636427864
+bz if_stmt_end_824633786920
 load 8
 store 2
-if_stmt_end_824636427864:
+if_stmt_end_824633786920:
 load 5
 load 6
 +
@@ -193,18 +208,18 @@ store 10
 bytec 0
 bytec 0
 app_global_get
-bytec 4
+bytec 6
 concat
 app_global_put
 bytec 0
 bytec 0
 app_global_get
-bytec 5
+bytec 7
 concat
 app_global_put
 load 9
 store 11
-bytec 2
+bytec 4
 store 12
 callsub fun_printNum
 store 0
@@ -217,13 +232,13 @@ app_global_put
 bytec 0
 bytec 0
 app_global_get
-bytec 6
+bytec 3
 concat
 app_global_put
 bytec 0
 bytec 0
 app_global_get
-bytec 7
+bytec 2
 concat
 app_global_put
 bytec 0
@@ -235,7 +250,7 @@ app_global_put
 load 9
 intc 8
 >
-bz if_stmt_end_824636427872
+bz if_stmt_end_824633786928
 load 9
 intc 6
 -
@@ -271,11 +286,11 @@ app_global_get
 bytec 10
 concat
 app_global_put
-if_stmt_end_824636427872:
+if_stmt_end_824633786928:
 load 9
 intc 6
 <
-bz if_stmt_end_824636427880
+bz if_stmt_end_824633786936
 intc 6
 load 9
 -
@@ -313,11 +328,29 @@ app_global_get
 bytec 10
 concat
 app_global_put
-if_stmt_end_824636427880:
+if_stmt_end_824633786936:
 bytec 0
 bytec 0
 app_global_get
 bytec 1
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 3
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 2
+concat
+app_global_put
+bytec 0
+bytec 0
+app_global_get
+bytec 13
 concat
 app_global_put
 intc 1
@@ -326,9 +359,9 @@ end_main:
 fun_printNum:
 intc 0
 store 13
-loop_start_824636427888:
+loop_start_824633787256:
 intc 1
-bz loop_end_824636427888
+bz loop_end_824633787256
 load 11
 intc 6
 %
@@ -349,7 +382,7 @@ store 11
 load 11
 intc 0
 ==
-bz if_stmt_end_824636427896
+bz if_stmt_end_824633787264
 bytec 0
 bytec 0
 app_global_get
@@ -358,13 +391,13 @@ concat
 app_global_put
 intc 1
 retsub
-if_stmt_end_824636427896:
+if_stmt_end_824633787264:
 load 13
 intc 1
 +
 store 13
-b loop_start_824636427888
-loop_end_824636427888:
+b loop_start_824633787256
+loop_end_824633787256:
 intc 1
 retsub
 end_printNum:

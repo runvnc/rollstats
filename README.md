@@ -1,4 +1,4 @@
-(Image of output)
+![scn](path.png)
 
 ## What this does
 
@@ -26,5 +26,5 @@ on the Algorand blockchain only get a maximum of 700 instructions executed.
 
 Not to offend anyone, but the most accurate technical term is "pure fuckery".
 
-Note: tealang is a work in progress, and has a lot of gotchas at the moment I am writing this.  But they seem to be working
-diligently to update it to the new AVM version.
+Note: The new version of Tealang is a work in progress, and has a lot of gotchas at the moment I am writing this.  But they seem to be working
+diligently to update it to the new AVM version.  A lot of stuff already works if you are careful.

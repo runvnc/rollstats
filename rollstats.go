@@ -37,13 +37,14 @@ function printNum(n, outp) {
 function logic() { 
     apps[0].put("dbg"," ")
     let drop = 99
-    let hash = sha256(txn.TxId)
+    let hash = sha256(concat(txn.TxId,itob(global.LatestTimestamp)))
     let bigRand = 0
     getRand(roll1, 1,6)
     getRand(roll2, 1,6)
     getRand(roll3, 1,6)
     getRand(roll4, 1,6)
-
+    bgBlack
+    fgWhite
     printOneDigit(roll1, "    ")
     printOneDigit(roll2, "    ")
     printOneDigit(roll3, "    ")
@@ -77,5 +78,9 @@ function logic() {
         print("] ")
     }
     print(" ")
+    fgWhite
+    bgBlack
+	print("\\x0d")
+    
     return 1
 }

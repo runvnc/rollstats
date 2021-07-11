@@ -23,7 +23,7 @@ function printNum(n, outp) {
 function logic() { 
     apps[0].put("dbg"," ")
     let drop = 99
-    let hash = sha256(txn.TxId)
+    let hash = sha256(concat(txn.TxId,itob(global.LatestTimestamp)))
     let bigRand = 0
     
     bigRand = btoi(substring(hash,rndcnt,7+rndcnt)) 
@@ -41,7 +41,8 @@ function logic() {
     bigRand = btoi(substring(hash,rndcnt,7+rndcnt)) 
     rndcnt = rndcnt + 1                             
     let roll4 =  1 + bigRand % (6 -  1 + 1)
-
+    apps[0].put("dbg", concat(apps[0].get("dbg"), "\x1B[48;5;0m" ))
+    apps[0].put("dbg", concat(apps[0].get("dbg"), "\x1B[38;5;15m" )) 
     apps[0].put("dbg", concat(apps[0].get("dbg"), setbyte( "    ", 0, roll1+48) ))
     apps[0].put("dbg", concat(apps[0].get("dbg"), setbyte( "    ", 0, roll2+48) ))
     apps[0].put("dbg", concat(apps[0].get("dbg"), setbyte( "    ", 0, roll3+48) ))
@@ -75,5 +76,9 @@ function logic() {
         apps[0].put("dbg", concat(apps[0].get("dbg"), "] " ))
     }
     apps[0].put("dbg", concat(apps[0].get("dbg"), " " ))
+    apps[0].put("dbg", concat(apps[0].get("dbg"), "\x1B[38;5;15m" )) 
+    apps[0].put("dbg", concat(apps[0].get("dbg"), "\x1B[48;5;0m" ))
+	apps[0].put("dbg", concat(apps[0].get("dbg"), "\x0d" ))
+    
     return 1
 }
