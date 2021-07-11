@@ -9,6 +9,8 @@ You can try it out with the included scripts that call `goal` if you have an Alg
 I use **`fish` shell, so that is required** with these exact scripts (not hard to modify them for bash). You will need the `gpp` program installed.
 Also, before running, you will need to **first set the environment variable `$APP_CREATOR`**.
 
+You will also need to **install a JSON processing program called `jq` first**.
+
 ```shell
 ./init.sh
 ```
