@@ -22,7 +22,7 @@ You will also need to **install a JSON processing program called `jq` first** be
 ## How
 
 It is written in [Tealang](https://github.com/pzbitskiy/tealang), also using the GPP macro preprocessor.  The macros are helpful to conserve instruction executions, since stateful programs
-on the Algorand blockchain only get a maximum of 700 instructions executed.
+on the Algorand blockchain only get a maximum of 700 instructions executed. EDIT: Although I have since found out about the `inline` keyword which will also inline functions and at the present moment is the only way to get function returns to work properly.
 
 The "random" function is the simplest thing I could come up with that sort of worked. I'm not sure it even qualifies as pseudo-random though.  There are limited cycles left, but it may be possible to make it slightly better.
 
